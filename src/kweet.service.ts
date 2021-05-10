@@ -21,7 +21,6 @@ export class KweetService {
     }
 
     async getAllKweetsBasedOnPageNumber(pageNumber: number){
-      //TO DO magische database dingen.
       const take = 10;
       const skip = pageNumber * 10;
   
