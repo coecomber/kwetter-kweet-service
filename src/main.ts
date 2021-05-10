@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { KweetModule } from './kweet.module';
 import { Logger } from '@nestjs/common';
+var cors = require('cors')
 
 async function bootstrap() {
   const app = await NestFactory.create(KweetModule);
@@ -14,6 +15,8 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
+
+  app.use(cors())
 
   await app.listen(process.env.PORT, "0.0.0.0");
 
