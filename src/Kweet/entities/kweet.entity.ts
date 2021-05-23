@@ -4,7 +4,6 @@ import * as typeorm from 'typeorm';
 export default class Kweet {
     constructor() {
         this.id = '';
-        this.name = '';
         this.kweet = '';
         this.ownerId = '';
         this.created = new Date();
@@ -13,9 +12,6 @@ export default class Kweet {
 
     @typeorm.PrimaryGeneratedColumn('uuid')
     id?: string;
-
-    @typeorm.Column()
-    name!: string;
 
     @typeorm.Column()
     kweet!: string;

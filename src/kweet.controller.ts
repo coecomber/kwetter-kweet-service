@@ -26,6 +26,7 @@ export class KweetController {
     @Body() kweetDto: CreateKweet,
   ): Promise<Kweet> {
     const kweet: Kweet = { ...kweetDto }
+    console.log(kweet)
     return await this.kweetService.createKweet(kweet);
   }
 }
